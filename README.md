@@ -1,43 +1,84 @@
 # DreamyHook Core Web Component Library
 
-A modern Vue 3 + Tailwind CSS component library built with TypeScript, featuring accessible components powered by Headless UI.
+A comprehensive, production-ready Vue 3 component library built with TypeScript, Tailwind CSS, and accessibility in mind.
+
+## ✨ Features
+
+- 🎨 **44+ Components** - Complete set of UI components for modern web applications
+- 🌙 **Dark Mode** - Built-in dark mode support across all components
+- ♿ **Accessibility** - WCAG compliant with proper ARIA labels and keyboard navigation
+- 🎯 **TypeScript** - Full TypeScript support with comprehensive type definitions
+- 🎨 **Tailwind CSS** - Utility-first styling with customizable design tokens
+- 📱 **Responsive** - Mobile-first responsive design
+- 🚀 **Performance** - Optimized bundle size with tree-shaking support
+- 🧩 **Composable** - Flexible composable architecture with Vue 3 Composition API
+
+## 📦 Installation
+
+```bash
+npm install dreamyhook-core-web-component-library
+# or
+yarn add dreamyhook-core-web-component-library
+# or
+pnpm add dreamyhook-core-web-component-library
+```
 
 ## 🚀 Quick Start
 
-```bash
-# Install dependencies
-npm install
+### 1. Import Styles
 
-# Start development server
-npm run dev
+Add the component styles to your main CSS file:
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+```css
+@import 'dreamyhook-core-web-component-library/dist/style.css';
 ```
 
-## 📦 Tech Stack
+### 2. Register Components
 
-- **Vue 3** - Progressive JavaScript framework
-- **Tailwind CSS** - Utility-first CSS framework
-- **Headless UI** - Unstyled, accessible UI components
-- **TypeScript** - Type-safe development
-- **Vite** - Fast build tool
-- **Pinia** - State management
-- **Vue Router** - Client-side routing
+**Global Registration:**
 
-## 🎨 Features
+```typescript
+import { createApp } from 'vue'
+import App from './App.vue'
 
-- ✅ Dark mode support
-- ✅ Fully typed with TypeScript
-- ✅ Accessible components (WCAG compliant)
-- ✅ Responsive design
-- ✅ Customizable theme
-- ✅ Production-ready
-- ✅ Tree-shakeable
-- ✅ SSR compatible
+// Import all components
+import * as DreamyHookComponents from 'dreamyhook-core-web-component-library'
+
+const app = createApp(App)
+
+// Register all components globally
+Object.entries(DreamyHookComponents).forEach(([name, component]) => {
+  app.component(name, component)
+})
+
+app.mount('#app')
+```
+
+**Individual Import:**
+
+```vue
+<template>
+  <div>
+    <Button variant="primary" @click="handleClick">
+      Click me
+    </Button>
+    <Modal v-model:isOpen="showModal" title="Hello World">
+      <p>This is a modal dialog!</p>
+    </Modal>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Button, Modal } from 'dreamyhook-core-web-component-library'
+
+const showModal = ref(false)
+
+const handleClick = () => {
+  showModal.value = true
+}
+</script>
+```
 
 ## 📁 Project Structure
 
