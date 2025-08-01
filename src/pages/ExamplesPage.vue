@@ -15,14 +15,29 @@
         Interactive examples showcasing component usage and patterns
       </p>
 
-      <div class="mt-12">
-        <div class="rounded-lg border border-gray-200 bg-white p-8 text-center dark:border-gray-700 dark:bg-gray-800">
-          <p class="text-gray-600 dark:text-gray-400">
-            Component examples will be added as components are built throughout the development phases.
-          </p>
-          <p class="mt-4 text-sm text-gray-500 dark:text-gray-500">
-            Check back soon for Button, Input, Card, Modal, and more examples!
-          </p>
+      <div class="mt-12 space-y-12">
+        <!-- Navigation Tabs -->
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <nav class="-mb-px flex space-x-8">
+            <button
+              v-for="tab in tabs"
+              :key="tab.id"
+              @click="activeTab = tab.id"
+              :class="[
+                'whitespace-nowrap border-b-2 py-2 px-1 text-sm font-medium transition-colors',
+                activeTab === tab.id
+                  ? 'border-primary text-primary'
+                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'
+              ]"
+            >
+              {{ tab.name }}
+            </button>
+          </nav>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="rounded-lg border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+          <component :is="activeComponent" />
         </div>
       </div>
 
@@ -34,5 +49,20 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
 import ThemeToggle from '@/components/ThemeToggle.vue'
+import ButtonExamples from '@/examples/ButtonExamples.vue'
+import FormExamples from '@/examples/FormExamples.vue'
+
+const tabs = [
+  { id: 'buttons', name: 'Buttons', component: ButtonExamples },
+  { id: 'forms', name: 'Forms & Inputs', component: FormExamples }
+]
+
+const activeTab = ref('buttons')
+
+const activeComponent = computed(() => {
+  const tab = tabs.find(t => t.id === activeTab.value)
+  return tab?.component || ButtonExamples
+})
 </script>
