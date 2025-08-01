@@ -53,10 +53,14 @@ import { ref, computed } from 'vue'
 import ThemeToggle from '@/components/ThemeToggle.vue'
 import ButtonExamples from '@/examples/ButtonExamples.vue'
 import FormExamples from '@/examples/FormExamples.vue'
+import FormControlsExamples from '@/examples/FormControlsExamples.vue'
+import ProfileSettingsExample from '@/examples/ProfileSettingsExample.vue'
 
 const tabs = [
   { id: 'buttons', name: 'Buttons', component: ButtonExamples },
-  { id: 'forms', name: 'Forms & Inputs', component: FormExamples }
+  { id: 'forms', name: 'Forms & Inputs', component: FormExamples },
+  { id: 'form-controls', name: 'Form Controls', component: FormControlsExamples },
+  { id: 'profile', name: 'Profile Form', component: ProfileSettingsExample }
 ]
 
 const activeTab = ref('buttons')

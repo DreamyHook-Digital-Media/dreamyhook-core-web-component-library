@@ -26,7 +26,7 @@
     <section>
       <h3 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">With Icons</h3>
       <div class="flex flex-wrap gap-4">
-        <Button :left-icon="DownloadIcon">Download</Button>
+        <Button :left-icon="ArrowDownTrayIcon">Download</Button>
         <Button :right-icon="ArrowRightIcon">Continue</Button>
         <Button :left-icon="PlusIcon" :right-icon="ChevronDownIcon">Options</Button>
       </div>
@@ -81,7 +81,7 @@ import {
   ArrowTopRightOnSquareIcon,
   ChevronDownIcon,
   ChevronRightIcon,
-  DownloadIcon,
+  ArrowDownTrayIcon,
   HeartIcon,
   LockClosedIcon,
   PlusIcon
