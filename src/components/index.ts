@@ -33,5 +33,14 @@ export { default as Toast } from './Toast.vue'
 export { default as ToastContainer } from './ToastContainer.vue'
 export { default as Tooltip } from './Tooltip.vue'
 
+// Complex Widgets
+export { default as BlogPostCard } from './BlogPostCard.vue'
+export { default as Card } from './Card.vue'
+export { default as DataTable } from './DataTable.vue'
+export { default as PricingCard } from './PricingCard.vue'
+export { default as Stats } from './Stats.vue'
+export { default as Timeline } from './Timeline.vue'
+export { default as UserProfileCard } from './UserProfileCard.vue'
+
 // Utility
 export { default as ThemeToggle } from './ThemeToggle.vue'
