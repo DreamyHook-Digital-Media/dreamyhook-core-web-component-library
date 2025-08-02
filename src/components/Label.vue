@@ -1,6 +1,6 @@
 <template>
   <label
-    :for="for"
+    :for="htmlFor"
     :class="labelClasses"
   >
     <slot />

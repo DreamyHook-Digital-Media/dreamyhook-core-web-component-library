@@ -41,6 +41,16 @@ const routes: RouteRecordRaw[] = [
     path: '/landing-examples',
     name: 'landing-examples',
     component: () => import('@/pages/LandingPageExamples.vue')
+  },
+  {
+    path: '/playground',
+    name: 'playground',
+    component: () => import('@/pages/ComponentPlayground.vue')
+  },
+  {
+    path: '/theme-showcase',
+    name: 'theme-showcase',
+    component: () => import('@/pages/ThemeShowcase.vue')
   }
 ]
 

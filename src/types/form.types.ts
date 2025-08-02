@@ -19,7 +19,7 @@ export interface InputProps {
 }
 
 export interface LabelProps {
-  for?: string
+  htmlFor?: string
   required?: boolean
   disabled?: boolean
 }
