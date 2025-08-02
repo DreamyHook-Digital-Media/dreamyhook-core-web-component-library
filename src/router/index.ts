@@ -51,6 +51,16 @@ const routes: RouteRecordRaw[] = [
     path: '/theme-showcase',
     name: 'theme-showcase',
     component: () => import('@/pages/ThemeShowcase.vue')
+  },
+  {
+    path: '/accessibility',
+    name: 'accessibility',
+    component: () => import('@/pages/AccessibilityExamples.vue')
+  },
+  {
+    path: '/animation-examples',
+    name: 'animation-examples',
+    component: () => import('@/pages/AnimationExamples.vue')
   }
 ]
 
